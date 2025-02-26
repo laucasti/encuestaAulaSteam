@@ -10,7 +10,7 @@ document.querySelectorAll('.carita').forEach(carita => {
 });
 
 function guardarRespuestas() {
-    // Recuperar respuestas existentes o inicializar un array vacío
+    // Recuperar las respuestas existentes o inicializar un array vacío
     let respuestas = JSON.parse(localStorage.getItem('respuestas')) || [];
 
     // Recorrer cada pregunta y guardar la respuesta seleccionada
@@ -27,5 +27,6 @@ function guardarRespuestas() {
 
     // Guardar el array actualizado en localStorage
     localStorage.setItem('respuestas', JSON.stringify(respuestas));
+    console.log("Respuestas guardadas:", respuestas); // Depuración
     alert('Respuestas guardadas correctamente.');
 }

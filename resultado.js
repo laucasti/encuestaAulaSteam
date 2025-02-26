@@ -1,6 +1,8 @@
 function descargarResultados() {
     // Recuperar todas las respuestas almacenadas
     let respuestas = JSON.parse(localStorage.getItem('respuestas')) || [];
+    console.log("Respuestas recuperadas:", respuestas); // Depuración
+
     let resultados = {};
 
     // Contar las respuestas por pregunta y tipo
@@ -12,6 +14,8 @@ function descargarResultados() {
         // Incrementar el contador según la respuesta
         resultados[respuesta.pregunta][respuesta.respuesta]++;
     });
+
+    console.log("Resultados contados:", resultados); // Depuración
 
     // Crear la hoja de cálculo
     let ws_data = [["Pregunta", "Buena", "Regular", "Mala"]];
