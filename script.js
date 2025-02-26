@@ -10,18 +10,22 @@ document.querySelectorAll('.carita').forEach(carita => {
 });
 
 function guardarRespuestas() {
-    let respuestas = [];
+    // Recuperar respuestas existentes o inicializar un array vacío
+    let respuestas = JSON.parse(localStorage.getItem('respuestas')) || [];
+
+    // Recorrer cada pregunta y guardar la respuesta seleccionada
     document.querySelectorAll('.pregunta').forEach((pregunta, index) => {
         let seleccionada = pregunta.querySelector('.selected');
         if (seleccionada) {
+            // Agregar la respuesta al array de respuestas
             respuestas.push({
-                pregunta: index + 1,
-                respuesta: seleccionada.dataset.respuesta
+                pregunta: index + 1, // Número de la pregunta (1, 2, 3)
+                respuesta: seleccionada.dataset.respuesta // "buena", "regular", "mala"
             });
         }
     });
 
-    // Guardar en localStorage
+    // Guardar el array actualizado en localStorage
     localStorage.setItem('respuestas', JSON.stringify(respuestas));
     alert('Respuestas guardadas correctamente.');
 }
