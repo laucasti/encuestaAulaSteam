@@ -1,20 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
     background-color: #d6f0ff; /* Fondo azul pastel */
+    font-family: 'Poppins', sans-serif;
+    padding-top: 50px; /* Más espacio en la parte superior */
 }
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 15px; /* Espaciado entre el título y el párrafo */
+    font-size: 28px;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 30px; /* Espacio entre el párrafo y el formulario */
+    font-size: 16px;
+    color: #333;
+}
+
 .encuesta-container {
     background-color: white;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 12px;
     margin-top: 20px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.pregunta {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pregunta p {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.opciones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
 .carita {
     width: 50px;
     cursor: pointer;
-    margin: 5px;
+    transition: transform 0.2s ease-in-out;
 }
+
 .carita:hover {
     opacity: 0.7;
+    transform: scale(1.1);
 }
+
 .selected {
     border: 2px solid black;
+    border-radius: 50%;
+}
+
+/* Botón gris con espaciado */
+.btn-enviar {
+    background-color: #6c757d;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px; /* Espaciado extra */
+}
+
+.btn-enviar:hover {
+    background-color: #5a6268;
 }

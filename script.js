@@ -10,23 +10,37 @@ document.querySelectorAll('.carita').forEach(carita => {
 });
 
 function guardarRespuestas() {
-    // Recuperar las respuestas existentes o inicializar un array vacío
     let respuestas = JSON.parse(localStorage.getItem('respuestas')) || [];
+    let todasRespondidas = true; // Verificar si todas las preguntas tienen respuesta
 
-    // Recorrer cada pregunta y guardar la respuesta seleccionada
     document.querySelectorAll('.pregunta').forEach((pregunta, index) => {
         let seleccionada = pregunta.querySelector('.selected');
         if (seleccionada) {
-            // Agregar la respuesta al array de respuestas
             respuestas.push({
-                pregunta: index + 1, // Número de la pregunta (1, 2, 3)
-                respuesta: seleccionada.dataset.respuesta // "buena", "regular", "mala"
+                pregunta: index + 1,
+                respuesta: seleccionada.dataset.respuesta
             });
+        } else {
+            todasRespondidas = false;
         }
     });
 
-    // Guardar el array actualizado en localStorage
+    if (!todasRespondidas) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Faltan respuestas',
+            text: 'Por favor responde todas las preguntas antes de enviar.',
+            confirmButtonColor: '#6c757d'
+        });
+        return;
+    }
+
     localStorage.setItem('respuestas', JSON.stringify(respuestas));
-    console.log("Respuestas guardadas:", respuestas); // Depuración
-    alert('Respuestas guardadas correctamente.');
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Respuestas guardadas',
+        text: '¡Gracias por completar la encuesta!',
+        confirmButtonColor: '#6c757d'
+    });
 }
