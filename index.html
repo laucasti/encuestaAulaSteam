@@ -3,82 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encuesta de Satisfacción</title>
-    <!-- Bootstrap CSS -->
+    <title>DEMO encuesta Aula Steam</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <!-- Logo de la empresa -->
-        <div class="text-center mb-4">
-            <img src="avatar.png" alt="Logo de la empresa" class="img-fluid" style="max-width: 150px;">
-        </div>
-
-        <!-- Encuesta -->
-        <div class="card">
-            <div class="card-header">
-                <h2 class="card-title text-center">Encuesta de Satisfacción</h2>
+    <div class="container text-center">
+        <h1>DEMO encuesta Aula Steam</h1>
+        <p>El fin de esta encuesta es recopilar opiniones sobre las instalaciones, equipos y clases del Aula Steam.</p>
+        <div class="encuesta-container">
+            <div class="pregunta">
+                <p>1. ¿Cómo te parecen las instalaciones?</p>
+                <img src="buena.png" alt="Buena" class="carita" data-pregunta="1" data-respuesta="buena">
+                <img src="regular.png" alt="Regular" class="carita" data-pregunta="1" data-respuesta="regular">
+                <img src="mala.png" alt="Mala" class="carita" data-pregunta="1" data-respuesta="mala">
             </div>
-            <div class="card-body">
-                <form id="encuestaForm">
-                    <!-- Pregunta 1 -->
-                    <div class="mb-3">
-                        <label for="pregunta1" class="form-label">1. ¿Cómo calificarías nuestro servicio?</label>
-                        <select class="form-select" id="pregunta1" required>
-                            <option value="5">Excelente</option>
-                            <option value="4">Muy Bueno</option>
-                            <option value="3">Bueno</option>
-                            <option value="2">Regular</option>
-                            <option value="1">Malo</option>
-                        </select>
-                    </div>
-
-                    <!-- Pregunta 2 -->
-                    <div class="mb-3">
-                        <label for="pregunta2" class="form-label">2. ¿Recomendarías nuestra empresa a otros?</label>
-                        <select class="form-select" id="pregunta2" required>
-                            <option value="5">Definitivamente Sí</option>
-                            <option value="4">Probablemente Sí</option>
-                            <option value="3">No Estoy Seguro</option>
-                            <option value="2">Probablemente No</option>
-                            <option value="1">Definitivamente No</option>
-                        </select>
-                    </div>
-
-                    <!-- Pregunta 3 -->
-                    <div class="mb-3">
-                        <label for="pregunta3" class="form-label">3. ¿Cómo calificarías la atención al cliente?</label>
-                        <select class="form-select" id="pregunta3" required>
-                            <option value="5">Excelente</option>
-                            <option value="4">Muy Bueno</option>
-                            <option value="3">Bueno</option>
-                            <option value="2">Regular</option>
-                            <option value="1">Malo</option>
-                        </select>
-                    </div>
-
-                    <!-- Botón de enviar -->
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Enviar Encuesta</button>
-                    </div>
-                </form>
+            <div class="pregunta">
+                <p>2. ¿Cómo te parecen los equipos?</p>
+                <img src="buena.png" alt="Buena" class="carita" data-pregunta="2" data-respuesta="buena">
+                <img src="regular.png" alt="Regular" class="carita" data-pregunta="2" data-respuesta="regular">
+                <img src="mala.png" alt="Mala" class="carita" data-pregunta="2" data-respuesta="mala">
             </div>
-        </div>
-
-        <!-- Resultados -->
-        <div id="resultados" class="mt-4 text-center" style="display: none;">
-            <h3>Resultados de la Encuesta</h3>
-            <p id="puntajeTotal"></p>
-            <p id="comentario"></p>
+            <div class="pregunta">
+                <p>3. ¿Cómo te pareció la clase?</p>
+                <img src="buena.png" alt="Buena" class="carita" data-pregunta="3" data-respuesta="buena">
+                <img src="regular.png" alt="Regular" class="carita" data-pregunta="3" data-respuesta="regular">
+                <img src="mala.png" alt="Mala" class="carita" data-pregunta="3" data-respuesta="mala">
+            </div>
+            <button class="btn btn-primary mt-3" onclick="guardarRespuestas()">Enviar Respuestas</button>
         </div>
     </div>
 
-    <!-- Bootstrap JS y dependencias -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <!-- JavaScript personalizado -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,20 @@
+body {
+    background-color: #a2d5f2; /* Fondo azul pastel */
+}
+.encuesta-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.carita {
+    width: 50px;
+    cursor: pointer;
+    margin: 5px;
+}
+.carita:hover {
+    opacity: 0.7;
+}
+.selected {
+    border: 2px solid black;
+}
