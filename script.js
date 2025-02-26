@@ -37,6 +37,11 @@ function guardarRespuestas() {
 
     localStorage.setItem('respuestas', JSON.stringify(respuestas));
 
+    // Quitar la selección de todas las caritas después de enviar
+    document.querySelectorAll('.carita').forEach(carita => {
+        carita.classList.remove('selected');
+    });
+
     Swal.fire({
         icon: 'success',
         title: 'Respuestas guardadas',
